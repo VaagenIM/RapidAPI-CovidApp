@@ -5,8 +5,14 @@ html
     style
       include style.css
   body
-    h1 Covid Stats!
-    h2 New cases:
-    h2= newCases
-    h2 Total:
-    h2= activeCases
+    form(action="/" method="get")
+      input(onclick="location.href='?country=Norway'" type="button" value="Norge")
+      input(onclick="location.href='?country=Sweden'" type="button" value="Sverige")
+      input(onclick="location.href='?country=Denmark'" type="button" value="Danmark")
+      input(onclick="location.href='?country=Estonia'" type="button" value="Estland")
+      input(onclick="location.href='?country=Finland'" type="button" value="Finland")
+
+
+    h1 Covid Stats for #{country}
+    h2 New cases: #{newCases}
+    h2 Total: #{activeCases}
